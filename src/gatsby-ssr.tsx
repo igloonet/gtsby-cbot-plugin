@@ -106,14 +106,22 @@ export const onRenderBody = (
   const { setHeadComponents } = args;
 
   const headComponents = [
+    // <script
+    //   key="cookiebot-script"
+    //   id="Cookiebot"
+    //   src="https://consent.cookiebot.com/uc.js"
+    //   data-cbid={cookiebotId}
+    //   data-consentmode="disabled"
+    //   data-cookieconsent="statistics"
+    //   type="text/plain"
+    //   async={manualMode ? true : undefined} // Undefined removes the attribute completely. Async needs to be removed entirely for automode to block all scripts.
+    // ></script>,
     <script
       key="cookiebot-script"
       id="Cookiebot"
       src="https://consent.cookiebot.com/uc.js"
       data-cbid={cookiebotId}
-      data-consentmode="disabled"
-      data-cookieconsent="statistics"
-      type="text/plain"
+      type="text/javascript"
       async={manualMode ? true : undefined} // Undefined removes the attribute completely. Async needs to be removed entirely for automode to block all scripts.
     ></script>,
   ];
